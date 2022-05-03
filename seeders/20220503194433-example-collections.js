@@ -2,25 +2,25 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('Collections', [{
+    await queryInterface.bulkInsert('collections', [{
       name: 'Plain',
       releaseDate: new Date('May 1st, 2022')
     },{
       name: 'Dress-Up',
-      releaseDate: new Date('Febuary 24th, 2022')
+      releaseDate: '2022-02-24'
     },{
       name: 'Sporting',
-      releaseDate: new Date('August 2nd, 2021')
+      releaseDate: '2021-08-02'
     },{
       name: 'Swim-Time',
-      releaseDate: new Date('April 12th, 2021')
+      releaseDate: '2021-04-12'
     },{
       name: 'Unique',
-      releaseDate: new Date('August 22nd, 2020')
+      releaseDate: '2020-08-22'
     }])
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('Collections', null, {})
+    await queryInterface.bulkDelete('collections', null, {})
   }
 };

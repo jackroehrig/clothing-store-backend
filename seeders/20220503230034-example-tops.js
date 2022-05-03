@@ -2,7 +2,7 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('Top', [{
+    await queryInterface.bulkInsert('tops', [{
       collection_id: 2,
       shortSleeve: true,
       collared: true,
@@ -76,6 +76,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('Tops', null, {})
+    await queryInterface.bulkDelete('tops', null, {})
   }
 };
