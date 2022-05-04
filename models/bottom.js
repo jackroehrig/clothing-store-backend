@@ -45,6 +45,26 @@ module.exports = (sequelize, DataTypes) => {
     picture: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    s: {
+      type: DataTypes.SMALLINT,
+      allowNull: false,
+      defaultValue: 3
+    },
+    m: {
+      type: DataTypes.SMALLINT,
+      allowNull: false,
+      defaultValue: 3
+    },
+    l: {
+      type: DataTypes.SMALLINT,
+      allowNull: false,
+      defaultValue: 3
+    },
+    xl: {
+      type: DataTypes.SMALLINT,
+      allowNull: false,
+      defaultValue: 3
     }
   }, {
     sequelize,

@@ -16,11 +16,11 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      mainColor: {
+      main_color: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      secondaryColor: {
+      secondary_color: {
         type: Sequelize.STRING,
         allowNull: false
       },
@@ -35,6 +35,26 @@ module.exports = {
       picture: {
         type: Sequelize.STRING,
         allowNull: false
+      },
+      s: {
+        type: Sequelize.SMALLINT,
+        allowNull: false,
+        defaultValue: 3
+      },
+      m: {
+        type: Sequelize.SMALLINT,
+        allowNull: false,
+        defaultValue: 3
+      },
+      l: {
+        type: Sequelize.SMALLINT,
+        allowNull: false,
+        defaultValue: 3
+      },
+      xl: {
+        type: Sequelize.SMALLINT,
+        allowNull: false,
+        defaultValue: 3
       }
     });
   },

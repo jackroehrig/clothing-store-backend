@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      releaseDate: {
+      release_date: {
         type: Sequelize.DATE,
         allowNull: false
       }
