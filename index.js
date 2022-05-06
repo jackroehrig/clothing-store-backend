@@ -16,7 +16,11 @@ app.get('/', (req, res) => {
 })
 
 app.use('/items', require('./controllers/items'))
-
+app.use('/hats', require('./controllers/hats'))
+app.use('/tops', require('./controllers/tops'))
+app.use('/bottoms', require('./controllers/bottoms'))
+app.use('/shoes', require('./controllers/shoes'))
+app.use('/collections', require('./controllers/collections'))
 
 
 // LISTEN

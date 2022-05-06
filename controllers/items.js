@@ -29,11 +29,9 @@ items.get('/random_three', async (req, res) => {
         let randomItems = [...hats, ...tops, ...bottoms, ...shoes].sort(() => .5 - Math.random())
 
         res.status(200).json({
-            one: randomItems[0],
-            two: randomItems[1],
-            three: randomItems[2]
+            items: [randomItems[0], randomItems[1], randomItems[2]]
         })
-    } catch(err){
+    } catch (err) {
         res.status(404)
         console.log(err)
     }
