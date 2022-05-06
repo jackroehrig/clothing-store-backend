@@ -18,7 +18,12 @@ collections.get('/', async (req, res) => {
 
 collections.get('/:id', async (req, res) => {
     try{
-        let collection = await Collection.getByPk(req.params.id)
+        let collection = await Collection.findOne({
+            where: {collection_id: Number(req.params.id)},
+            include: {
+                all: true
+            }
+        })
         res.status(200).json({col: collection})
     }catch(err){
         console.log(err)
