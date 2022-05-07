@@ -5,7 +5,8 @@ const sequelize = require('sequelize')
 collections.get('/', async (req, res) => {
     try {
         let data = await Collection.findAll({
-            order: sequelize.fn('RANDOM')
+            order: sequelize.fn('RANDOM'),
+            include: {all: true}
         })
         res.status(200).json({
             items: [...data]
