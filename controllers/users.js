@@ -5,10 +5,10 @@ const bcrypt = require('bcrypt')
 const { User } = db
 
 users.post('/', async (req, res) => {
-    let { password, newUsername, ...rest } = req.body;
+    let { password, ...rest } = req.body;
 
-    const previousUser = await User.findOne({
-        where: { username: newUsername }
+    let previousUser = await User.findOne({
+        where: { username: req.body.username }
     })
 
     if (previousUser) {
