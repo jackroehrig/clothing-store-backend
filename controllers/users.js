@@ -5,12 +5,21 @@ const bcrypt = require('bcrypt')
 const { User } = db
 
 users.post('/', async (req, res) => {
-    let{password, ...rest} = req.body;
-    const user = await User.create({
-        ...rest,
-        passwordDigest: await bcrypt.hash(password, 10)
+    let { password, newUsername, ...rest } = req.body;
+
+    const previousUser = await User.findOne({
+        where: { username: newUsername }
     })
-    res.json(user)
+
+    if (previousUser) {
+        res.status(409).json({message: 'That username has already been taken :('})
+    } else {
+        const user = await User.create({
+            ...rest,
+            passwordDigest: await bcrypt.hash(password, 10)
+        })
+        res.status(200).json(user)
+    }
 })
 
 
